@@ -9,11 +9,11 @@ function App() {
   return (
     <>
     <div className='w-full min-h-screen bg-[rgb(255,242,225)]/50'>
-        <h1 className='text-3xl text-center bg-red-500 py-6 bg-[rgb(234,216,192)]/50'>Workout Generator</h1>
-        <div className='grid grid-cols-2 gap-4 my-4 bg-[rgb(209,187,158)]/50 mx-5 rounded-lg'>
+        <h1 className='text-3xl text-center bg-[rgb(209,187,158)] py-6' >Workout Generator</h1>
+        <div className='grid grid-cols-2 my-4 bg-[rgb(209,187,158)]/50 mx-5 rounded-lg'>
         <form>
           <div className='flex flex-col mx-2 py-4'>
-          <h1 className='text-2xl py-3 px-3'>Choose your preferences : </h1>
+          <h1 className='text-2xl py-3 px-3 bg-[rgb(167,146,119)]/50 rounded-lg'>Choose your preferences : </h1>
             <div className='flex flex-row py-3 mx-3'>
               <h4 className='text-lg mx-3'>Location :</h4>
               <label className='cursor-pointer'><input type="radio" name='Location' className='mx-3'/>Home</label>
@@ -38,8 +38,8 @@ function App() {
           </form> 
             
 
-          <div className='flex flex-col mx-2 py-4 bg-[rgb(167,146,119)]/50 '>
-            <h1 className='text-2xl py-3 px-3'>Workout Routine : </h1>
+          <div className='flex flex-col py-4 bg-[rgb(209,187,158)]/50 '>
+            <h1 className='text-2xl py-3 px-3 mx-3 rounded-lg'>Workout Routine : </h1>
           </div>
         </div>
     </div>
