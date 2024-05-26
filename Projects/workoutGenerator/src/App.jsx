@@ -716,9 +716,9 @@ function App() {
       Gym: 'Gym workout plan'
     };
     const difficultyOptions = {
-      beginner: 'Difficulty : Beginner',
-      intermediate: 'Difficulty : Intermediate',
-      advanced: 'Difficulty : Advanced'
+      beginner: '( Difficulty : Beginner )',
+      intermediate: '( Difficulty : Intermediate )',
+      advanced: '( Difficulty : Advanced )'
     };
 
     // Loop to add how many days are to be showed based on split length
@@ -738,14 +738,14 @@ function App() {
 
   return (
     <>
-      <div className='min-w-md min-h-screen bg-[rgb(255,242,225)]/50'>
-        <h1 className='text-3xl text-center bg-[rgb(209,187,158)] py-6' >Workout Generator</h1>
-        <div className='grid grid-cols-2 my-4 bg-[rgb(209,187,158)]/50 mx-5 rounded-lg'>
+      <div className='min-w-md min-h-screen bg-[rgb(34,40,49)]'>
+        <h1 className='text-3xl text-center bg-[rgb(12,12,12)] py-6 text-[rgb(222,208,182)]' >Workout Generator</h1>
+        <div className='grid grid-cols-2 my-4 bg-[rgb(20,20,20)] mx-5 rounded-lg outline-5 outline-[rgb(238,238,238)]'>
           <form onSubmit={handleSubmit}>
             <div className='flex flex-col mx-2 py-4'>
-              <h1 className='text-2xl py-3 px-3 bg-[rgb(167,146,119)]/50 rounded-lg'>Choose your preferences : </h1>
-              <div className='flex flex-row py-3 mx-3'>
-                <h4 className='text-lg mx-3'>Location :</h4>
+              <h1 className='text-2xl py-3 px-3 bg-[rgb(178,165,155)]/50 rounded-lg'>Choose your preferences : </h1>
+              <div className='flex text-lg flex-row py-3 mx-3 mt-3 text-[rgb(238,238,238)]'>
+                <h4 className='mx-3'>Location :</h4>
                 <label className='cursor-pointer'>
                   <input
                     type="radio"
@@ -765,8 +765,8 @@ function App() {
                     onChange={() => setLocation('Gym')}
                   />Gym</label>
               </div>
-              <div className='flex flex-col py-3 px-3'>
-                <h4 className='text-lg mx-3'>Difficulty : </h4>
+              <div className='flex flex-col py-3 px-3 text-[rgb(238,238,238)] text-lg my-1'>
+                <h4 className='text-lg mx-3 mb-1'>Difficulty : </h4>
                 <label className='cursor-pointer'>
                   <input
                     type="radio"
@@ -795,8 +795,8 @@ function App() {
                   />
                   Advanced</label>
               </div>
-              <div className='flex flex-col py-3 px-3'>
-                <h4 className='text-lg mx-3'>Split : </h4>
+              <div className='flex flex-col py-3 px-3 text-lg text-[rgb(238,238,238)]'>
+                <h4 className=' mx-3 mb-1 mt-2'>Split : </h4>
                 <label className='cursor-pointer'>
                   <input
                     type="radio"
@@ -836,15 +836,15 @@ function App() {
           </form>
 
 
-          <div className='flex flex-col py-4 bg-[rgb(209,187,158)]/50 '>
-            <h1 className='text-2xl py-3 px-3 mx-3 rounded-lg'>Workout Routine : </h1>
-
-            <p className='mx-3 my-3'><b>{displayLocation}</b>  <i>{displayDifficulty}</i> <i>{split}</i></p>
+          <div className='flex flex-col py-4 bg-[rgb(27,27,27)]/100 text-[rgb(238,238,238)] rounded-lg'>
+            <h1 className='text-2xl py-3 px-3 mx-3 rounded-lg bg-[rgb(178,165,155)]/50 text-black'>Workout Routine : </h1>
+          
+            <p className='mx-3 mb-4 mt-6 text-xl'><b>{displayLocation}</b> &nbsp; &nbsp;<i>{displayDifficulty}</i> </p>
 
             {displayWorkout && Object.keys(displayWorkout).map((dayKey, index) => (
               <div key={index}>
-                <h2 className='text-md font-semibold my-3'>{dayKey}</h2>
-                <ul className='list-decimal mx-7'>
+                <h2 className='text-md font-semibold my-3 mx-5'><u>{dayKey}</u></h2>
+                <ul className='list-decimal mx-8'>
                   {displayWorkout[dayKey].map((exercise, i) => (
                     <li key={i} className='my-1'>{exercise}</li>
                   ))}
